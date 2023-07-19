@@ -22,7 +22,6 @@ import com.jeremyliao.liveeventbus.core.ObservableConfig;
  */
 
 public final class LiveEventBus {
-
     /**
      * get observable by key with type
      *

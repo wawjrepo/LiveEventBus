@@ -3,6 +3,7 @@ package com.jeremyliao.lebapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -124,8 +125,12 @@ public class LiveEventBusDemo extends AppCompatActivity {
     }
 
     public void sendMsgByPostValue() {
+        String a1 = LiveEventBus.get(KEY_TEST_OBSERVE, String.class).getValue();
+        Log.i("fsdf",a1+"");
         LiveEventBus.get(KEY_TEST_OBSERVE)
                 .post("Message By PostValue: " + new Random().nextInt(100));
+        String a = LiveEventBus.get(KEY_TEST_OBSERVE, String.class).getValue();
+        Log.i("fsdf",a+"");
     }
 
     public void sendMsgToForeverObserver() {

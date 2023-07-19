@@ -11,6 +11,11 @@ import androidx.lifecycle.Observer;
 public interface Observable<T> {
 
     /**
+     * 获取值
+     */
+    T getValue();
+
+    /**
      * 进程内发送消息
      *
      * @param value 发送的消息

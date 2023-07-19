@@ -95,6 +95,7 @@ public final class LiveEventBusCore {
      * first of all, call config to get the Config instance
      * then, call the method of Config to config LiveEventBus
      * call this method in Application.onCreate
+     *
      * @return Config
      */
     public Config config() {
@@ -148,6 +149,11 @@ public final class LiveEventBusCore {
         LiveEvent(@NonNull String key) {
             this.key = key;
             this.liveData = new LifecycleLiveData<>(key);
+        }
+
+        @Override
+        public T getValue() {
+            return liveData.getValue();
         }
 
         /**
