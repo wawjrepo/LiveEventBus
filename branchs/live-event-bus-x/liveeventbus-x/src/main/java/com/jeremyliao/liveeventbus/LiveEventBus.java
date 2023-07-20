@@ -15,9 +15,9 @@ import com.jeremyliao.liveeventbus.core.ObservableConfig;
  * | |   | \ \ / / _ \  __\ \ / / _ \ '_ \| __| ___ \ | | / __|
  * | |___| |\ V /  __/ |___\ V /  __/ | | | |_| |_/ / |_| \__ \
  * \_____/_| \_/ \___\____/ \_/ \___|_| |_|\__\____/ \__,_|___/
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * Created by liaohailiang on 2019/1/21.
  */
 
@@ -25,9 +25,9 @@ public final class LiveEventBus {
     /**
      * get observable by key with type
      *
-     * @param key String
+     * @param key  String
      * @param type Class
-     * @param <T> T
+     * @param <T>  T
      * @return Observable
      */
     public static <T> Observable<T> get(@NonNull String key, @NonNull Class<T> type) {
@@ -37,19 +37,18 @@ public final class LiveEventBus {
     /**
      * get observable by key
      *
-     * @param key String
-     * @param <T> T
-     * @return Observable
+     * @param key
+     * @return Observable<Object>
      */
-    public static <T> Observable<T> get(@NonNull String key) {
-        return (Observable<T>)get(key, Object.class);
+    public static Observable<Object> get(@NonNull String key) {
+        return get(key, Object.class);
     }
 
     /**
      * get observable from eventType
      *
      * @param eventType Class
-     * @param <T> T
+     * @param <T>       T
      * @return Observable
      */
     public static <T extends LiveEvent> Observable<T> get(@NonNull Class<T> eventType) {
@@ -61,6 +60,7 @@ public final class LiveEventBus {
      * first of all, call config to get the Config instance
      * then, call the method of Config to config LiveEventBus
      * call this method in Application.onCreate
+     *
      * @return Config
      */
     public static Config config() {
@@ -72,6 +72,7 @@ public final class LiveEventBus {
      * first of all, call config to get the Config instance
      * then, call the method of Config to config LiveEventBus
      * call this method in Application.onCreate
+     *
      * @param key String
      * @return ObservableConfig
      */

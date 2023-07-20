@@ -1,9 +1,9 @@
 apply plugin: 'com.android.library'
 apply from: '../maven_publish_aar.gradle'
-version = '1.8.0'
+version = '1.8.0.1'
 artifact = "live-event-bus-x"
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
 
     defaultConfig {
         minSdkVersion 14
