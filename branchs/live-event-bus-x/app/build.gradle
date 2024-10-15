@@ -1,11 +1,13 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
-    compileSdkVersion 29
+    namespace "com.jeremyliao.lebapp"
+    compileSdk 34
     defaultConfig {
         applicationId "com.jeremyliao.livedatabus"
-        minSdkVersion 14
-        targetSdkVersion 28
+        minSdk 14
+        targetSdk 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -20,6 +22,14 @@ android {
     dataBinding {
         enabled = true
     }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
 }
 
 dependencies {
@@ -31,6 +41,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel:2.1.0'
     implementation 'androidx.lifecycle:lifecycle-livedata:2.1.0'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.1.0'
 
     //liveeventbus

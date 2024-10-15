@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 apply from: '../maven_publish_aar.gradle'
-version = '1.8.0.1'
+version = '1.8.0.2'
 artifact = "live-event-bus-x"
 android {
-    compileSdkVersion 29
-
+    namespace "com.jeremyliao.liveeventbus"
+    compileSdk 34
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 28
+        minSdk 14
+        targetSdk 28
         versionCode 1
         versionName "1.0"
     }
@@ -18,7 +18,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
 }
 
 dependencies {
